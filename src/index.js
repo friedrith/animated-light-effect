@@ -13,9 +13,9 @@ if (document.getElementById('drawing')) { // check if drawing element is present
 
     // create a group to include laptop images
     const group = draw.group()
-    const laptopBorder = draw.image('/assets/laptop-1x.png', 800, 600)
+    const laptopBorder = draw.image('./assets/laptop-1x.png', 800, 600)
     group.add(laptopBorder)
-    const laptopContent = draw.image('/assets/product-ui-1x.png', 600, 600).move(100, -15)
+    const laptopContent = draw.image('./assets/product-ui-1x.png', 600, 600).move(100, -15)
     group.add(laptopContent)
 
     // create a radial gradient
