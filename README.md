@@ -43,3 +43,6 @@ $ npm install --save-dev babel-loader babel-core babel-preset-react babel-plugin
 
 
 * https://github.com/svgdotjs/svg.filter.js#examples
+
+
+* http://scrollmagic.io/
