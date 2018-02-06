@@ -2,6 +2,10 @@
 
 Demo available [here](https://friedrith.github.io/animated-light-effect/)
 
+This project is a demo using SVG and animation on scroll like Invision studio. This demo is explained
+in this [Medium article](https://medium.com/@Daneel_Olivaw/how-to-create-a-handsome-gradient-scroll-animation-like-invision-studio-landing-page-fbc890d7e318).
+
+
 ## Getting started
 
 ```bash
