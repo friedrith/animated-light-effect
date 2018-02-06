@@ -1,4 +1,4 @@
-# animated-gradient
+# Animated light effect
 
 Demo available [here](https://friedrith.github.io/animated-light-effect/)
 
