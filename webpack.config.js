@@ -1,46 +1,74 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    main: "./src/index.js"
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: './',
-    filename: 'bundle.js',
+    path: path.join(__dirname, "dist"),
+    publicPath: "./",
+    filename: "bundle.js"
   },
   devServer: {
-    contentBase: './src',
+    historyApiFallback: true,
+    publicPath: "/",
+    contentBase: "./src",
     compress: true,
-    port: 3000,
+    port: 3000
   },
   module: {
-    rules: [{
-      test: /index\.jsx?$/,
-      use: [{
-        loader: 'babel-loader',
-      }]
-    }, {
-      test: /\.scss$/,
-      use: [{
-        loader: 'style-loader', // creates style nodes from JS strings
-      }, {
-        loader: 'css-loader', // translates CSS into CommonJS
-      }, {
-        loader: 'sass-loader', // compiles Sass to CSS
-      }],
-    }, {
-      test: /\.css$/,
-      use: [{
-        loader: 'style-loader', // creates style nodes from JS strings
-      }, {
-        loader: 'css-loader', // translates CSS into CommonJS
-      }],
-    }],
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "babel-loader"
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS
+          }
+        ]
+      },
+      {
+        test: /\.png/,
+        use: [
+          {
+            loader: "file-loader" // creates url for images
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Toto',
-      template: './src/index.html',
+      template: "./src/index.html",
+      filename: "./index.html",
+      inlineSource: ".js$"
     }),
-  ],
-}
+    new webpack.HotModuleReplacementPlugin()
+  ]
+};

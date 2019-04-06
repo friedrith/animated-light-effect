@@ -1,16 +1,18 @@
 {
-  "name": "animated-gradient",
+  "name": "animated-light-effect",
   "version": "0.1.0",
   "description": "animated gradient based on scroll",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server  --host 0.0.0.0",
-    "build": "cross-env NODE_ENV=production webpack --display-error-details",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development --open --config webpack.config.js",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production --display-error-details",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/friedrith/animated-gradient.git"
+    "url": "git+https://github.com/friedrith/animated-light-effect.git"
   },
   "keywords": [
     "gradient",
@@ -21,27 +23,28 @@
   "author": "Thibault Friedrich",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/friedrith/animated-gradient/issues"
+    "url": "https://github.com/friedrith/animated-light-effect/issues"
   },
-  "homepage": "https://github.com/friedrith/animated-gradient#readme",
+  "homepage": "https://github.com/friedrith/animated-light-effect#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
-    "html-webpack-plugin": "^2.30.1",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.7.2",
+    "push-dir": "^0.4.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.5"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "normalize.css": "^7.0.0",

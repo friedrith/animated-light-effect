@@ -1,4 +1,8 @@
 {
-  "plugins": ["transform-class-properties", "transform-object-rest-spread", ["transform-es2015-modules-commonjs", { "loose": false }] ],
-  "presets": ["es2017", "es2015", "stage-0"],
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-export-default-from"
+  ]
 }
